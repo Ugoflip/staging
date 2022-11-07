@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&display=swap");
+/* devanagari */
+body {
+  font-family: "Poppins", sans-serif;
+}
+.main {
+  min-height: calc(100vh - 160px);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+}
+.header {
+  padding-top: 5rem;
+  transition: padding-top 0.3s, padding-bottom 0.3s;
+}
+.back-button {
+  position: absolute;
+  left: 15rem;
+  display: none;
+  cursor: pointer;
+}
+.mlr-20 {
+  padding: 0% 25%;
+}
+h1 {
+  font-weight: 600;
+}
+p {
+  font-weight: 400;
+}
+.search-box {
+  padding: 1.5rem;
+  border: 1px solid #e5dede;
+}
+/* .search-box select {
+  width: 25rem;
+} */
+.copyright {
+  border-top: 1px solid #d9d1d1;
+}
+.loader {
+  position: absolute;
+  background: #ffffffb8;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: none;
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+}
+.search-section,
+.winner-section {
+  width: 100%;
+  padding-bottom: 7rem;
+}
+.winner-section {
+  display: none;
+}
+.loader img {
+  width: 100px;
+}
+.raffle-info {
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto 2rem;
+  position: relative;
+  color: #fff;
+}
+
+.raffle-info img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+}
+.raffle-info .heading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+.has-search .form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 2.375rem;
+  height: 2.375rem;
+  line-height: 3.7rem;
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}
+.has-search {
+  width: 50%;
+}
+.has-search img {
+  width: 20px;
+  height: 20px;
+}
+.has-search input {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 18px;
+  border: 1px solid #d3d3d3 !important;
+}
+
+.btn-pink {
+  background-color: #6a5ae0;
+  border-color: #6a5ae0;
+  color: #fff;
+}
+.btn-pink:hover {
+  color: #fff;
+  background-color: #7264e0;
+  border-color: #7264e0;
+}
+@media only screen and (max-width: 840px) {
+  /*Big smartphones [426px -> 600px]*/
+  .search-section button {
+    text-align: center;
+    display: flex;
+    /* flex-direction: column; */
+    /* align-items: center; */
+    justify-content: center;
+    width: 200px;
+    margin-top: 10px;
+  }
+  .mlr-20 {
+    padding: 0% 5%;
+  }
+  .back-button {
+    left: 2rem;
+    margin-top: -30px;
+  }
+}

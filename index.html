@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Index page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <script
+      src="js/browserfs.min.js"
+      integrity="sha512-mz0EI+Ay1uIJP7rZEX8C/JlTAcHRIQ8Sny4vxmmj8MSzDJgG9NxxY2pUmOGv1lO7imFIFMyjjCzEXEywNgaUdQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="css/bootstrap.min.css"
+      integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn"
+      crossorigin="anonymous"
+    />
+    <script src="js/autoComplete.min.js"></script>
+    <link rel="stylesheet" href="css/autoComplete.min.css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <script type="text/javascript">
+      // Installs globals onto window:
+      // * Buffer
+      // * require (monkey-patches if already defined)
+      // * process
+      // You can pass in an arbitrary object if you do not wish to pollute
+      // the global namespace.
+      BrowserFS.install(window);
+      // Configures BrowserFS to use the LocalStorage file system.
+      BrowserFS.configure(
+        {
+          fs: "LocalStorage",
+        },
+        function (e) {
+          if (e) {
+            // An error happened!
+            throw e;
+          }
+          // Otherwise, BrowserFS is ready-to-use!
+        }
+      );
+    </script>
+    <script src="js/sweetalert.min.js"></script>
+    <link href="css/styles.css" rel="stylesheet" />
+    <script type="text/javascript" src="js/bsv.min.js"></script>
+    <script src="js/rng.js" defer></script>
+    <script src="js/winnerselection.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/autoComplete.js" defer></script>
+  </head>
+  <body id="page-top">
+    <!-- Navigation-->
+    <nav id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="#page-top"
+          ><img src="images/logo.png"
+        /></a>
+      </div>
+    </nav>
+    <div class="main">
+      <div class="loader" id="loading">
+        <div><img src="images/loading.gif" /></div>
+      </div>
+      <!-- Masthead-->
+      <header class="header text-center">
+        <div class="back-button" id="back" onclick="backFunction()">
+          <img src="images/back.png" />
+        </div>
+        <div class="container d-flex align-items-center flex-column">
+          <!-- Masthead Heading-->
+          <h1 class="masthead-heading mb-3">UgoFlip Fairness Provability</h1>
+
+          <!-- Masthead Subheading-->
+          <p class="masthead-subheading font-weight-light mb-3 mlr-20">
+            Would you like to live in your own mansion without having to save up
+            for years to buy one? Enter for the next draw now to win a house,
+            lots of cash, and other exciting prizes.
+          </p>
+        </div>
+      </header>
+
+      <section class="search-section text-center" id="search">
+        <div class="container body" align="center">
+          <input
+            id="autoComplete"
+            type="text"
+            dir="ltr"
+            spellcheck="false"
+            autocorrect="off"
+            autocomplete="off"
+            autocapitalize="off"
+            maxlength="2048"
+            tabindex="1"
+          />
+          <div class="selection"></div>
+          <button
+            type="button"
+            class="btn btn-pink btn-lg mt-3"
+            onclick="validateGameSelect()"
+          >
+            Validate Game
+          </button>
+        </div>
+      </section>
+
+      <section class="winner-section" id="winner">
+        <div class="container">
+          <div class="raffle-info">
+            <img src="images/house-img.png" />
+            <h3 class="heading" id="raffleTitle">Winners</h3>
+          </div>
+          <h2 class="text-center">Winners</h2>
+          <div class="row mb-3">
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Reward Type</th>
+                    <th scope="col">Reward Amount</th>
+                    <th scope="col">Winners</th>
+                  </tr>
+                </thead>
+                <tbody id="winnerInfo"></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- Copyright Section-->
+    <div class="copyright py-4 text-center">
+      <div class="container">
+        <small>Copyright &copy; 2022. Ugoflip. All rights reserved.</small>
+      </div>
+    </div>
+  </body>
+</html>
