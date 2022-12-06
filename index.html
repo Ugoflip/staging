@@ -50,6 +50,7 @@
     <script src="js/winnerselection.js" defer></script>
     <script src="js/main.js" defer></script>
     <script src="js/autoComplete.js" defer></script>
+    <script src="js/loader.js" defer></script>
   </head>
   <body id="page-top">
     <!-- Navigation-->
@@ -61,9 +62,18 @@
       </div>
     </nav>
     <div class="main">
-      <div class="loader" id="loading">
-        <div><img src="images/loading.gif" /></div>
+      <div class='loader' id="loading">
+        <div class='loader-container'>
+          <h3><b>Please wait a moment while we are checking the winner !</b></h3>
+          <div class='progress progress-striped active'>
+            <div class='progress-bar progress-bar-color' id='bar' role='progressbar' style='width: 0%;'></div>
+          </div>
+        </div>
       </div>
+
+      <!-- <div class="loader" id="loading">
+        <div><img src="images/loading.gif" /></div>
+      </div> -->
       <!-- Masthead-->
       <header class="header text-center">
         <div class="back-button" id="back" onclick="backFunction()">

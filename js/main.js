@@ -81,10 +81,13 @@ function showWinnerInfo(winnerInfoList) {
 
 function addLoading() {
   document.getElementById("loading").style.display = "flex";
+  document.getElementById("bar").style.width = "0%";
+  progress();
 }
 
 function removeLoading() {
   document.getElementById("loading").style.display = "none";
+  document.getElementById("bar").style.width = "0%";
   document.getElementById("autoComplete").value = "";
 }
 function errorMessage(message, icon = "error") {
