@@ -25,6 +25,7 @@ const autoCompleteJS = new autoComplete({
             response && response.ok ? await response.text() : null;
           if (finalizeTXFileData) {
           }
+          console.log('splittedText',splittedText)
           temp.push({
             id: splittedText[0],
             startDate: splittedText[1] || "",
