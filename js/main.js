@@ -1,4 +1,4 @@
-const S3BucketBaseUrl = "https://ugoflipstore.s3.amazonaws.com/";
+const S3BucketBaseUrl = "https://ugoflip-staging-bucket.s3.amazonaws.com/";
 async function handleValidate(raffleId) {
   addLoading();
   const bsv = window.bsvjs;
