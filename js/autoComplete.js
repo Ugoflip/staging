@@ -25,16 +25,17 @@ const autoCompleteJS = new autoComplete({
             response && response.ok ? await response.text() : null;
           if (finalizeTXFileData) {
           }
-          console.log('splittedText',splittedText)
-          temp.push({
-            id: splittedText[0],
-            startDate: splittedText[1] || "",
-            endDate: splittedText[2] || "",
-            name: splittedText.slice(3).join("--") || "",
-          });
+          if(splittedText[1]!='undefined'){
+            temp.push({
+              id: splittedText[0],
+              startDate: splittedText[1] || "",
+              endDate: splittedText[2] || "",
+              name: splittedText.slice(3).join("--") || "",
+            });
+          }
         }
-        console.log("temp", temp);
         for (let i = temp.length - 1; i >= 0; i--) {
+ 
           data.push(temp[i]);
         }
         // const data = await source.json();
