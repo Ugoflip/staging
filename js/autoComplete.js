@@ -16,6 +16,7 @@ const autoCompleteJS = new autoComplete({
         );
         const raffleList = source.split(/\n/).filter(Boolean);
         const temp = [];
+        const gameId=[];
         for (const raffle of raffleList) {
           const splittedText = raffle.split("--");
           const response = await fetch(
@@ -25,7 +26,8 @@ const autoCompleteJS = new autoComplete({
             response && response.ok ? await response.text() : null;
           if (finalizeTXFileData) {
           }
-          if(splittedText[1]!='undefined'){
+          if(splittedText[1]!='undefined' && !gameId.includes(splittedText[0])){
+            gameId.push(splittedText[0]);
             temp.push({
               id: splittedText[0],
               startDate: splittedText[1] || "",
