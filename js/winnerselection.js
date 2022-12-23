@@ -5,7 +5,6 @@ async function selectWinners(
   pubKey
 ) {
   const initObject = validateInitTransaction(initTransaction, pubKey);
-  console.log(initObject,initTransaction,pubKey)
   const initTxid = Buffer.from(bsv.Tx.fromBuffer(initTransaction).id(), "hex");
   const finalizationObject = validateEndTransaction(
     initObject,
@@ -74,19 +73,17 @@ function validateInitTransaction(transactionData, pubKey) {
     signature,
     messageParts: [messageBuf],
   } = parseTransaction(transactionData, 1);
-  console.log('===========', parseTransaction(transactionData, 1),'messageBuf',messageBuf)
   if (messageType !== 0) {
     errorMessage("Failed to select winner due to mis matched data");
     removeLoading();
     return;
   }
   if (!validateSignature(pubKey, signature, [messageBuf])) {
-    errorMessage("Failed to select winner due to mis matched data");
+    errorMessage("Failed to select winner due to mis matched data 11");
     removeLoading();
     return;
   }
   initObject = JSON.parse(messageBuf.toString());
-  console.log('initObject',initObject)
   if (initObject.noOfTickets < 2) {
     errorMessage("Failed to select winner due to mis matched data");
     removeLoading();
@@ -174,13 +171,11 @@ function validateEndTransaction(
     removeLoading();
     return;
   }
-  console.log('===========',endObject.additionalSeeds.length,endObject.additionalSeeds,'=========',endObject.additionalSeeds )
   if (!endObject.additionalSeeds.length || !endObject.additionalSeeds[0]) {
     errorMessage("Failed to select winner due to mis matched data");
     removeLoading();
     return;
   }
-  console.log('===========',endObject.additionalSeeds.length, initObject)
   if (endObject.additionalSeeds.length !== initObject.additionalSeeds.length) {
     errorMessage("Failed to select winner due to mis matched data");
     removeLoading();

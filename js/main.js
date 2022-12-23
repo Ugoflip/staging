@@ -1,10 +1,12 @@
 const S3BucketBaseUrl = "https://ugoflip-staging-bucket.s3.amazonaws.com/";
 async function handleValidate(raffleId) {
   addLoading();
-  const bsv = window.bsvjs;
-  const pubKey = bsv.PubKey.fromString(
-    "0250234c855965c3de27d1a7f1917ed89f6f05301b690e2f5bfed8c4a303339a84"
-  );
+  
+  const bsv = window.bsvjs; 
+  const publicKey = bsv.PubKey.fromPrivKey(
+    bsv.PrivKey.fromString("L1Afc9tBDJQYskHeinMGVmYnfhYpHF4SgSyrYJqRUkSm2oR3EcAx")
+  ).toString()
+  const pubKey = bsv.PubKey.fromString(publicKey);
 
   const initializeTxFileData = await readFile(`${raffleId}/initTx.txt`);
   const initializeTxId = initializeTxFileData.split(/\n/)[0];

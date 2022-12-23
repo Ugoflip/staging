@@ -1,5 +1,5 @@
 function progress(){
-    console.log('start progress bar')
+  //  console.log('start progress bar')
     setInterval(function () {
         var $bar =  document.getElementById("bar");
     
