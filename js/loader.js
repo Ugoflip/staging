@@ -8,8 +8,8 @@ function progress(){
   } else {
     $bar.style.width = (newWidth + 60) + "px";
   }
-  $bar.innerHTML = (parseInt($bar.style.width.replace("%","").replace("px","")) / 6) + "%";
-  if (parseInt($bar.style.width.replace("%","").replace("px","")) / 5 == 100) {
-    $bar.innerHTML = "Still working ... " + (parseInt($bar.style.width.replace("%","").replace("px","")) / 5) + "%";
+  $bar.innerHTML = Math.round(parseInt($bar.style.width.replace("%","").replace("px","")) / 5) + "%";
+  if (Math.round(parseInt($bar.style.width.replace("%","").replace("px","")) / 5) >= 20) {
+    $bar.innerHTML = "Still working ... " + Math.round(parseInt($bar.style.width.replace("%","").replace("px","")) / 5) + "%";
   }
 }
