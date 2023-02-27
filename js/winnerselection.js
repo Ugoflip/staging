@@ -13,7 +13,7 @@ async function selectWinners(
     pubKey
   );
   const ticketIds = [];
-  const validatedTicketSaleTransaction = [];
+
   let count = 0;
   let nextTicketTx = await loadNextTicketSaleTransaction(count);
   while (nextTicketTx) {
@@ -22,7 +22,7 @@ async function selectWinners(
       nextTicketTx,
       pubKey
     );
-    validatedTicketSaleTransaction.push(ticketId)
+
     for (let i = 0; i < ticketIds.length; i++) {
       if (ticketIds[i] === ticketId) {
         errorMessage(
@@ -32,9 +32,9 @@ async function selectWinners(
         return;
       }
     }
-    if (!validatedTicketSaleTransaction.includes(ticketId)){
+
       ticketIds.push(ticketId);
-    }
+
    
     if (ticketIds.length > finalizationObject.soldTicketCount) {
       break;
