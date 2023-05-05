@@ -48,6 +48,9 @@ async function selectWinners(
     removeLoading();
     return;
   }
+   // sort ticketIds alphabetically
+  ticketIds = ticketIds.sort();
+    
   const rng = new RNG(
     initObject.initialSeed,
     ...finalizationObject.additionalSeeds
