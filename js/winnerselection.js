@@ -12,7 +12,7 @@ async function selectWinners(
     finalizationTransaction,
     pubKey
   );
-  const ticketIds = [];
+  let ticketIds = [];
 
   let count = 0;
   let nextTicketTx = await loadNextTicketSaleTransaction(count);
