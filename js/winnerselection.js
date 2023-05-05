@@ -65,7 +65,9 @@ async function selectWinners(
       );
     }
     processedRewards.push({ reward, percentageWon, winningTicketIds });
+    console.log("winnerTicketIds",winningTicketIds);
   }
+    console.log("ticketIds",ticketIds);
   removeLoading();
   showWinnerInfo(processedRewards);
 }
