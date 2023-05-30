@@ -1,0 +1,24 @@
+{
+  "name": "staging",
+  "version": "1.0.0",
+  "description": "https://ugoflip.github.io/staging/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ugoflip/staging.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ugoflip/staging/issues"
+  },
+  "homepage": "https://github.com/Ugoflip/staging#readme",
+  "dependencies": {
+    "bsv": "^2.0.10",
+    "crypto-js": "^4.1.1"
+  }
+}
